@@ -1,0 +1,33 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+*.whl
+
+# Hatchling metadata
+*.hatch/
+
+# VSCode / IDEs
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# MacOS files
+.DS_Store
