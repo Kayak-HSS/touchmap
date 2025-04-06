@@ -1,6 +1,7 @@
 import re
 from typing import Literal
 from .boolmap import bool_to_braille
+from .nummap import num_to_braille
 
 def text_to_braille(text, grade: Literal[1, 2] =1, characterError: bool =True, binary: bool =False) -> str:
 
@@ -10,7 +11,7 @@ def text_to_braille(text, grade: Literal[1, 2] =1, characterError: bool =True, b
             return bool_to_braille(text, binary)
 
         elif isinstance(text, (int, float)):
-            return ""
+            return num_to_braille(text, binary)
 
         elif hasattr(text, "__str__"):
             text = str(text)
