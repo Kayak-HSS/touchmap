@@ -1,10 +1,7 @@
 import re
 from typing import List, Any
 from . import brailledict, binarydict
-
-
-def is_numeric(token: str) -> bool:
-    return bool(re.fullmatch(r"[+-]?\d+(?:\.\d+)?(?:e[+-]?\d+)?", token, re.IGNORECASE))
+from .utils import is_numeric, get_next_token, get_prev_token
 
 def alpha_converter(token: str, d: Any) -> str:
     converted = ""
@@ -31,22 +28,32 @@ def numeric_converter(token: str, d: Any) -> str:
 
     return converted
 
+def overlap_converter(token: str, previous: str, next: str, d: Any) -> str:
+    return ""
+
 def grade1_to_braille(split_text: List[str], characterError: bool, binary: bool) -> str :
     d = binarydict if binary else brailledict
     converted_text = ""
 
-    for token in split_text:
+    for i, token in enumerate(split_text):
 
         if token == " ": 
             converted_text += d.alpha_dict[" "]
+
         elif token in d.overlap_char_dict:
-            pass
+            previous = get_prev_token(split_text, i)
+            next = get_next_token(split_text, i)
+            converted_text += overlap_converter(token, previous, next, d)
+
         elif token.isalpha():
             converted_text += alpha_converter(token, d)
+
         elif token.is_numeric():
             converted_text += numeric_converter(token, d)
+
         elif token in d.char_dict:
-            pass
+            converted_text += d.char_dict[token]
+            
         elif characterError:
             raise ValueError(f"Unsupported character '{token}'")
         else:
