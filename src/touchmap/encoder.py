@@ -14,7 +14,7 @@ def text_to_braille(text, grade: Literal[1, 2] =1, characterError: bool =True, b
         else:
             raise TypeError("Unsupported type for text. Must be str, int, float, bool, or implement __str__().")
     
-    split_text = re.findall(r"\d+\.\d+(?:e[+-]?\d+)?|\d+(?:e[+-]?\d+)?|[a-zA-Z]+|[^\w\s]|\s", text)
+    split_text = re.findall(r"[+-]?(?:\d+\.\d+|\.\d+|\d+)(?:[eE][+-]?\d+)?|[a-zA-Z]+|[^\w\s]|\s", text)
 
     if grade == 1:
         return grade1_to_braille(split_text, characterError, binary)
