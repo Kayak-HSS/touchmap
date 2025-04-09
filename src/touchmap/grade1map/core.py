@@ -18,6 +18,19 @@ def alpha_converter(token: str, d: Any) -> str:
 
     return converted
 
+def numeric_converter(token: str, d: Any) -> str:
+    indicator = d.num_dict["num"]
+    converted = indicator 
+
+    for char in token:
+        if char == "e" or char == "E":
+            space = d.alpha_dict[" "]
+            converted += space + d.overlap_char_dict["x"][1] + space + indicator + d.num_dict["1"] + d.num_dict["0"] +d.char_dict["'"]
+        else :
+            converted += d.num_dict[char]
+
+    return converted
+
 def grade1_to_braille(split_text: List[str], characterError: bool, binary: bool) -> str :
     d = binarydict if binary else brailledict
     converted_text = ""
@@ -31,7 +44,7 @@ def grade1_to_braille(split_text: List[str], characterError: bool, binary: bool)
         elif token.isalpha():
             converted_text += alpha_converter(token, d)
         elif token.is_numeric():
-            pass
+            converted_text += numeric_converter(token, d)
         elif token in d.char_dict:
             pass
         elif characterError:
