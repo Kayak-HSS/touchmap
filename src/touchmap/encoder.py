@@ -1,6 +1,6 @@
 import re
 from typing import Literal
-from grade1map import grade1_to_braille
+from .grade1map import grade1_to_braille
 
 def text_to_braille(text, grade: Literal[1, 2] =1, characterError: bool =True, binary: bool =False) -> str:
 

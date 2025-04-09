@@ -61,7 +61,7 @@ def grade1_to_braille(split_text: List[str], characterError: bool, binary: bool)
         elif token.isalpha():
             converted_text += alpha_converter(token, d)
 
-        elif token.is_numeric():
+        elif is_numeric(token):
             converted_text += numeric_converter(token, d)
 
         elif token in d.char_dict:

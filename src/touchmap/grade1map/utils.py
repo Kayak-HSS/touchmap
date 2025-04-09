@@ -1,3 +1,6 @@
+import re
+from typing import List
+
 def is_numeric(token: str) -> bool:
     return bool(re.fullmatch(r"[+-]?\d+(?:\.\d+)?(?:e[+-]?\d+)?", token, re.IGNORECASE))
 
