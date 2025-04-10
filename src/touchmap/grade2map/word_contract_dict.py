@@ -1,18 +1,15 @@
-#010100
 prefix_word_dict1 = {
     "__prefix_binary__": "010100",
     "__prefix_braille__": "⠘",
     'these': 'the', 'those':'th', 'upon': 'u', 'whose': 'wh', 'word': 'w',
 }
 
-#010101
 prefix_word_dict2 = {
     "__prefix_binary__": "010101",
     "__prefix_braille__": "⠸",
     'cannot': 'c', 'had': 'h', 'many': 'm', 'spirit': 's', 'their': 'the', 'world': 'w',
 }
 
-#000100
 prefix_word_dict3 = {
     "__prefix_binary__": "000100",   
     "__prefix_braille__": "⠐",     

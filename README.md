@@ -1,11 +1,11 @@
 # TouchMap
 
 **TouchMap** is a Python library for converting textual data into Braille representations.  
-Currently, it supports **Grade 1 Braille** only. Grade 2 support is under active development.
+It supports both **Grade 1 and 2 Braille**. Grade 2 support is under active development.
 
 ## Features
 
-- Converts plain text (including numbers, punctuation, and scientific notation) into Grade 1 Braille.
+- Converts plain text (including numbers, punctuation, and scientific notation) into Grade 1 and 2 Braille.
 - Supports both **Unicode Braille** and **binary (dot) representation**.
 - Handles context-sensitive characters like `"`, `x`, `*`, `/`, and `-`.
 - Graceful handling of unsupported characters.
@@ -43,22 +43,39 @@ def text_to_braille(text: Any, grade: int = 1, characterError: bool = True, bina
 ### Example
 
 ```python
+from touchmap import text_to_braille
+
 text = "The value is -3.14e+10 and x is not multiplication."
-braille = text_to_braille(text)
-binary = text_to_braille(text, binary=True)
-print(braille)
-print(binary)
+
+braille1 = text_to_braille(text)
+braille2 = text_to_braille(text, grade=2)
+
+binary1 = text_to_braille(text, binary=True)
+binary2 = text_to_braille(text, grade=2, binary=True)
+
+print("Grade 1 Braille:", braille1)
+print("\nGrade 2 Braille:", braille2)
+
+print("\n\nGrade 1 Binary:", binary1)
+print("\nGrade 2 Binary:", binary2)
 ```
 
 ```bash
-⠠⠞⠓⠑ ⠧⠁⠇⠥⠑ ⠊⠎ ⠼⠐⠤⠉⠲⠁⠙ ⠐⠦ ⠼⠁⠚⠄⠼⠐⠖⠁⠚ ⠁⠝⠙ ⠭ ⠊⠎ ⠝⠕⠞ ⠍⠥⠇⠞⠊⠏⠇⠊⠉⠁⠞⠊⠕⠝⠲
-000001011110101100100100000000101011100000101010100011100100000000011000011010000000010111010000001001110000001110100000110100000000010000110110000000010111100000010110000100010111010000101110100000010110000000100000110110110100000000110011000000011000011010000000110110100110011110000000110010100011101010011110011000111010101010011000110000100000011110011000100110110110001110
+Grade 1 Braille: ⠠⠞⠓⠑ ⠧⠁⠇⠥⠑ ⠊⠎ ⠼⠐⠤⠉⠲⠁⠙ ⠐⠦ ⠼⠁⠚⠈⠢⠼⠐⠖⠁⠚ ⠁⠝⠙ ⠭ ⠊⠎ ⠝⠕⠞ ⠍⠥⠇⠞⠊⠏⠇⠊⠉⠁⠞⠊⠕⠝⠲
+
+Grade 2 Braille: ⠠⠮ ⠧⠁⠇⠥⠑ ⠊⠎ ⠼⠐⠤⠉⠲⠁⠙ ⠐⠦ ⠼⠁⠚⠈⠢⠼⠐⠖⠁⠚ ⠯ ⠭ ⠊⠎ ⠝ ⠍⠥⠇⠞⠊⠏⠇⠊⠉⠁⠞⠊⠕⠝⠲
+
+
+Grade 1 Binary: 000001011110101100100100000000101011100000101010100011100100000000011000011010000000010111000100000011110000001101100000110100000000000100001011000000010111100000011100010000001001010111000100001110100000011100000000100000110110110100000000110011000000011000011010000000110110100110011110000000110010100011101010011110011000111010101010011000110000100000011110011000100110110110001101
+
+Grade 2 Binary: 000001011011000000101011100000101010100011100100000000011000011010000000010111000100000011110000001101100000110100000000000100001011000000010111100000011100010000001001010111000100001110100000011100000000111011000000110011000000011000011010000000110110000000110010100011101010011110011000111010101010011000110000100000011110011000100110110110001101
 ```
 
 ## Roadmap
 
-- Implementation of **Grade 2 Braille** conversion.
+- Implementation of partial word conversion in grade 2.
 - Development of a **web API** for trying TouchMap online.
+- Bugfixes
 
 ## Meta
 

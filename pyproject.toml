@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "touchmap"
-version = "0.2.0"
+version = "0.3.5"
 description = "A python library for converting text to braille."
 authors = [
     { name = "Yajat Pathak", email = "kayakbraillent@gmail.com" }
