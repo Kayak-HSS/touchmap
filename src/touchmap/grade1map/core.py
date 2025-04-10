@@ -22,7 +22,7 @@ def numeric_converter(token: str, d: Any) -> str:
     for char in token:
         if char == "e" or char == "E":
             space = d.alpha_dict[" "]
-            converted += space + d.overlap_char_dict["x"][1] + space + indicator + d.num_dict["1"] + d.num_dict["0"] +d.char_dict["'"]
+            converted += space + d.overlap_char_dict["x"][1] + space + indicator + d.num_dict["1"] + d.num_dict["0"] +d.char_dict["^"] + indicator
         else :
             converted += d.num_dict[char]
 

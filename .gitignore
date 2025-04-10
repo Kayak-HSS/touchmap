@@ -17,6 +17,7 @@ dist/
 .eggs/
 pip-wheel-metadata/
 *.whl
+.pypirc
 
 # Hatchling metadata
 *.hatch/
