@@ -58,11 +58,11 @@ word_abbr_dict = {
     
     'either': 'ei', 'enough': 'en', 'every': 'e', 
 
-    'first': 'fst', 'for': 'for', 'friend': 'fr', 'from': 'f', 
+    'first': 'fst', 'friend': 'fr', 'from': 'f', 
 
     'go': 'g', 'good': 'gd', 'great': 'grt', 
 
-    'have': 'h', 'herself': 'herf', 'him': 'hm', 'himself': 'hmf', 'his': 'his', 
+    'have': 'h', 'herself': 'herf', 'him': 'hm', 'himself': 'hmf',
 
     'immediate': 'imm', 'it': 'x', 'its': 'xs', 'itself': 'xf', 
     
@@ -76,7 +76,7 @@ word_abbr_dict = {
 
     'necessary': 'nec', 'neither': 'nei', 'not': 'n', 
     
-    "o'clock": "o'c", 'oneself': 'onef', 'ourselves': 'ourvs', 'out': 'ou', 
+    'oneself': 'onef', 'ourselves': 'ourvs', 'out': 'ou', 
 
     'paid': 'pd', 'people': 'p', 'perceive': 'perc', 'perceiving': 'percv', 'perhaps': 'perh', 
 
@@ -87,15 +87,45 @@ word_abbr_dict = {
     'said': 'sd', 'shall': 'sh', 'should': 'shd', 'so': 's', 'still': 'st', 
     'such': 'sch', 
     
-    'that': 't', 'the': 'the', 'themselves': 'themvs', 'this': 'th', 'thyself': 'thyf', 
-    'to': 'to', 'today': 'td', 'together': 'tgr', 'tomorrow': 'tm', 'tonight': 'tn', 
+    'that': 't', 'themselves': 'themvs', 'this': 'th', 'thyself': 'thyf', 
+    'today': 'td', 'together': 'tgr', 'tomorrow': 'tm', 'tonight': 'tn', 
     
     'us': 'u', 
 
     'very': 'v', 
     
-    'was': 'was', 'were': 'were', 'which': 'wh', 'will': 'w', 'with': 'with', 'would': 'wd', 
+    'which': 'wh', 'will': 'w', 'would': 'wd', 
     
     'you': 'y', 
     'your': 'yr', 'yourself': 'yrf', 'yourselves': 'yrvs',
+}
+
+
+prefix_end_part_dict1={
+    "__prefix_binary__": "010001",   
+    "__prefix_braille__": "⠨",
+    "ound" : "d",
+    "ance" : "c",
+    "sion" : "n",
+    "less" : "s",
+    "ount" : "t",
+}
+
+prefix_end_part_dict2={
+    "__prefix_binary__": "000101",   
+    "__prefix_braille__": "⠰",
+    "ence": "e",
+    "ong": "g",
+    "ful": "l",
+    "tion": "n",
+    "ness": "s",
+    "ment": "t",
+    "ity": "y",
+}
+
+prefix_end_part_dict3={
+    "__prefix_binary__": "000001",   
+    "__prefix_braille__": "⠠",
+    "ation": "n",
+    "ally": "y"
 }
