@@ -15,3 +15,4 @@ word_dict = {
     'percent': '⠨⠴' 
 }
 
+prefix = ("⠘", "⠸", "⠐")
