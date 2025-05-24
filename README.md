@@ -36,7 +36,7 @@ def text_to_braille(text: Any, grade: int = 1, characterError: bool = True, bina
 | Argument         | Data Type | Default Value | Required | Description                                                                         |
 | ---------------- | --------- | ------------- | -------- | ----------------------------------------------------------------------------------- |
 | `text`           | `Any`     | —             | Yes      | Input to be converted. Accepts strings, numbers, and booleans.                      |
-| `grade`          | `1 or 2`  | `1`           | No       | Braille grade to use. Currently only `1` is supported.                              |
+| `grade`          | `1 or 2`  | `1`           | No       | Braille grade to use - `1` or `2`                                                   |
 | `characterError` | `bool`    | `True`        | No       | If `True`, raises error on unsupported characters; if `False`, replaces with space. |
 | `binary`         | `bool`    | `False`       | No       | If `True`, returns binary (6-dot) format; if `False`, returns Unicode Braille.      |
 
